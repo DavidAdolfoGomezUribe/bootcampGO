@@ -7,18 +7,22 @@ import (
 )
 
 func main(){
-
-	var palabra string = strings.Join(os.Args[1:], " ")
+	
+	var palabra string = strings.Join(os.Args[1:], " ") // eto pa guardar todos los argumentos como slice
 	var otrapalabras = []rune(palabra)
 	var arbalap []string
 
-	for i := (len(palabra)-1); i >= 0 ; i-- {
+	for i := (len(otrapalabras)-1); i >= 0 ; i-- {
 		
 		//fmt.Println(string(otrapalabras[i]))
 		arbalap = append(arbalap, string(otrapalabras[i]))
 	}
 	
+	var tipodedato string =  strings.Join(arbalap,"")
+	fmt.Printf("%T\n",tipodedato)
 	fmt.Println(strings.Join(arbalap,""))
+	
+
 }
 
 
